@@ -32,14 +32,14 @@ export function Button({
     return (
         <button
             className={clsx(
-                "inline-flex h-10 px-4 rounded-md border text-sm",
+                "inline-flex h-10 px-4 rounded-md border text-sm font-semibold",
                 "items-center justify-center",
                 {
-                    "bg-indigo-500 text-white hover:bg-indigo-600":
+                    "bg-indigo-600 text-white hover:bg-indigo-500":
                         variant === "primary",
-                    "border-indigo-300 text-indigo-500 hover:border-indigo-500":
+                    "border-indigo-500 text-indigo-500 hover:border-indigo-300":
                         variant === "outline",
-                    "bg-red-600 text-white hover:bg-red-700":
+                    "bg-red-700 text-white hover:bg-red-600":
                         variant === "danger"
                 },
                 "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500",

@@ -7,6 +7,12 @@ import {Button} from "@/app/ui/button";
 import {NavBar} from "@/app/ui/navbar";
 import {Hero} from "@/app/ui/hero";
 import {Input} from "@/app/ui/input";
+import {Footer} from "@/app/ui/footer";
+import {FooterSmall} from "@/app/ui/footer1";
+import {ProductFeatures} from "@/app/ui/product-features";
+import {Login} from "@/app/ui/login";
+import {Register} from "@/app/ui/register";
+import {ForgotPassword} from "@/app/ui/forgot";
 
 
 export default function Page() {
@@ -19,18 +25,67 @@ export default function Page() {
                 <Button variant={"danger"}>Button</Button>
             </div>
 
-            <div className="flex gap-2 mt-4 ml-4">
+            <div className="mt-4">
                 <NavBar></NavBar>
-            </div>
-
-
-            <div className="flex gap-2 mt-4 ml-4">
                 <Hero/>
             </div>
 
 
-            <div className="flex gap-2 mt-4 ml-4">
-                <Input/>
+            <div className="mt-4 mb-32">
+                <ProductFeatures/>
+            </div>
+
+
+            {/*<div className="flex mt-4">*/}
+            {/*    <Input/>*/}
+            {/*</div>*/}
+
+            <div className="flex mt-4">
+                <Footer/>
+            </div>
+
+            <div className="flex">
+                <FooterSmall/>
+            </div>
+
+            LOGIN
+            <div className="mt-4">
+                <NavBar></NavBar>
+            </div>
+            <div className="mt-4">
+                <Login/>
+            </div>
+
+
+            <div className="flex">
+                <FooterSmall/>
+            </div>
+
+
+            Register
+            <div className="mt-4">
+                <NavBar></NavBar>
+            </div>
+            <div className="mt-4">
+                <Register/>
+            </div>
+
+
+            <div className="flex">
+                <FooterSmall/>
+            </div>
+
+            Forgot Password
+            <div className="mt-4">
+                <NavBar></NavBar>
+            </div>
+            <div className="mt-4">
+                <ForgotPassword/>
+            </div>
+
+
+            <div className="flex">
+                <FooterSmall/>
             </div>
 
 

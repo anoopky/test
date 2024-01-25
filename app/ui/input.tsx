@@ -3,7 +3,6 @@ import {Button} from "@/app/ui/button";
 
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-    text: string;
     variant?: "primary" | "secondary" | "outline" | "success" | "danger";
     loading?: boolean;
     icon?: React.ReactNode;
