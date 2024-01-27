@@ -2,7 +2,7 @@ import clsx from 'clsx';
 
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-    variant?: "primary" | "outline"  | "danger";
+    variant?: "primary" | "outline" | "danger";
     loading?: boolean;
     icon?: React.ReactNode;
     shortcut?: string;
@@ -34,15 +34,16 @@ export function Button({
             className={clsx(
                 "inline-flex h-10 px-4 rounded-md border text-sm font-semibold",
                 "items-center justify-center",
+                "focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-400",
                 {
-                    "bg-indigo-600 text-white hover:bg-indigo-500":
+                    "bg-indigo-600 text-white hover:bg-indigo-500 focus:ring-indigo-500":
                         variant === "primary",
-                    "border-indigo-500 text-indigo-500 hover:border-indigo-300":
+                    "border-indigo-300 text-indigo-500 hover:border-indigo-100":
                         variant === "outline",
                     "bg-red-700 text-white hover:bg-red-600":
                         variant === "danger"
                 },
-                "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500",
+                // "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500",
                 "transition-colors ease-in-out",
                 className,
             )}

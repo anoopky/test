@@ -3,36 +3,48 @@ import RevenueChart from '@/app/ui/dashboard/revenue-chart';
 import LatestInvoices from '@/app/ui/dashboard/latest-invoices';
 import {lusitana} from '@/app/ui/fonts';
 import {fetchRevenue, fetchLatestInvoices, fetchCardData} from '@/app/lib/data';
+import {NavBar} from "@/app/ui/navbar";
+import {Hero} from "@/app/ui/hero";
+// import {NavBar} from "@/app/ui/navbar";
+import Navbar1 from "@/app/ui/navbar1";
+import {Table} from "@/app/ui/table";
+import {DevCard} from "@/app/ui/dev-card";
+import {ProductSearch} from "@/app/ui/product-search";
+import {ProductPage} from "@/app/ui/product-page";
+import {ProfilePage} from "@/app/ui/profile";
 
 export default async function Page() {
-    const revenue = await fetchRevenue();
-    const latestInvoices = await fetchLatestInvoices();
-    const {
-        numberOfCustomers,
-        numberOfInvoices,
-        totalPaidInvoices,
-        totalPendingInvoices,
-    } = await fetchCardData();
+
 
     return (
         <main>
-            <h1 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>
-                Dashboard
-            </h1>
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-                <Card title="Collected" value={totalPaidInvoices} type="collected"/>
-                <Card title="Pending" value={totalPendingInvoices} type="pending"/>
-                <Card title="Total Invoices" value={numberOfInvoices} type="invoices"/>
-                <Card
-                    title="Total Customers"
-                    value={numberOfCustomers}
-                    type="customers"
-                />
+            <div className="mt-4">
+                {/*<NavBar></NavBar>*/}
+                <Navbar1></Navbar1>
             </div>
-            <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-4 lg:grid-cols-8">
-                <RevenueChart revenue={revenue}/>
-                <LatestInvoices latestInvoices={latestInvoices}/>
+            <div className="container mx-auto mt-16">
+
+                <Table/>
+
             </div>
+            <div className="flex container mx-auto my-16 justify-around gap-16">
+
+                <DevCard/>
+                <DevCard/>
+            </div>
+
+            <div className="flex container mx-auto my-32">
+                <ProductSearch/>
+            </div>
+
+            <div className="flex container mx-auto my-32">
+                <ProductPage/>
+            </div>
+
+            <div className="container mx-auto my-32 w-1/2 ">
+                <ProfilePage/>
+            </div>
+
         </main>
     );
 }
